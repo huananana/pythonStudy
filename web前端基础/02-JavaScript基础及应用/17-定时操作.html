@@ -1,0 +1,85 @@
+<!--
+	1.设置周期性的定时器
+	setInterval(函数,时间)  - 每隔指定的时间就调用一次函数(函数适合匿名); 会创建一个定时器对象并且返回；时间单位ms
+	
+	2.取消周期性的定时器
+	clearInterval(定时器对象)    -   关闭指定的定时器对象
+	
+	3.一次性的定时操作
+	setTimeout(函数,时间)   -  到了指定的时间后执行函数(函数只会执行一次), 返回定时器对象
+	
+	4.取消一次性定时器
+	clearTimeout(定时器对象)  -  关闭指定定时器
+	
+	补充：修改当前窗口加载的地址
+	window.location.href = 'https://www.baidu.com'
+	
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="clearInterval(timer1)">关闭定时器</button>
+		<button onclick="triangle()">triangle</button>
+		<!--1.setinterval(函数，时间)-->
+		<script type="text/javascript">
+			//周期性的定时器
+			//1.每隔指定的时间就调用一次函数(会创建一个定时器对象并且返回) - 时间单位ms
+			num = 1
+			
+			timer1 = setInterval(function(){
+				num++
+				console.log(num)
+			},1000)
+			
+			//取消周期性定时器
+			//2.clearInterval(定时器对象) - 关闭指定的定时器对象
+			//clearInterval(timer1)
+			
+			//练习：点击开始按钮就每个1秒打印一个数字，从1开始打印；点击暂停就停止打印
+			num2 = 1
+			buttonn = true
+			function triangle(){
+//				if buttonn{
+//					timer2 = setInterval(function(){
+//					console.log(num2)
+//					num2+=1
+//					},1000)	
+//				}else{
+//					clearInterval(timer2)
+//				}
+//				
+				if (buttonn==true){
+					buttonn=false
+				}else{
+					buttonn=true
+				}
+			}
+			
+			//3.一次性的定时操作
+			//setTimeout(函数，时间) - 到了指定的时间以后，执行函数(函数只执行一次)，返回定时器对象
+//			timer3 = setTimeout(function(){
+//				alert('快跑，下雨啦')
+//			},3000)
+			
+			//4.取消一次性定时器
+			//clearTimeout(定时器对象) - 关闭指定定时器
+			
+			//练习：5秒自动跳转百度页面
+//			num3 = 1
+//			timer4 = setInterval(function(){
+//				if (num3 == 5){
+//					window.location.href = 'https://www.baidu.com'
+//				}
+//				information = '倒计时' + String(num3)
+//				console.log(information)
+//				num3++
+//				
+//			},1000)
+			
+		</script>
+	</body>
+</html>

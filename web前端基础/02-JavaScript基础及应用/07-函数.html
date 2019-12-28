@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>32-函数</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//1.普通函数
+	/*
+	function 函数名(形参){
+		函数体
+		arguments ---------- arguments=[参数列表]
+	}
+	
+	特别：可以先调用再声明，[跨script下面的调用可以使用上面的声明]
+		   可以不用书写形参，形参没有限制
+		   形参可以直接获取部分实参的值，
+	 */
+	
+	//2.匿名函数
+	/*
+	变量 = function (参数列表){
+	}
+	*/
+	
+	//3.箭头函数
+	/*
+	(参数列表)=>{
+		函数体
+	}
+	
+	//4.自调用函数
+	/*
+	(function(形参列表){
+		函数体
+	})(实参列表)
+	特别：自调用函数的上一条语句必须在结束的时候加分号
+	 */
+	
+	function func4(fn){
+		console.log('=====函数4======')
+		fn()
+		console.log('===============')
+	}
+	
+	func4(()=>{
+		console.log('箭头函数')
+	})
+	a = (x,y)=>{return x+y}
+	console.log(a(10, 20));
+	
+</script>

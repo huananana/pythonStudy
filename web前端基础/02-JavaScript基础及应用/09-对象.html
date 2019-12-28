@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+
+<script type="text/javascript">
+	//1.对象的直接量
+	/*
+	{
+		属性1：属性值1，
+		属性2：属性值2，
+		...
+	}
+	 */
+	
+	//2.构造方法(相当于类)
+	/*
+	构造方法本质就是函数。
+	
+	语法：
+	function 函数名/类名(参数列表){
+		this.属性1 = 值1
+		this.属性2 = 值3
+		...
+		return this
+	}
+	构造方法的调用(创建对象)：new 函数名()
+	
+	*/
+	
+	//3.使用对象属性		-	查
+	//对象.属性
+	//对象[属性名]
+	
+	//4.修改/添加对象属性
+	//对象.属性 = 新值 
+	
+	//5.添加属性和方法
+	/*
+	类名.prototype.属性名 = 值   ====  给指定类添加属性和方法
+	*/
+	
+	
+	console.log('===实例===')
+	//直接声明对象，类似于字典
+	p1 = {
+		name:'小明',
+		age: 18,
+		gender:'男'
+	}
+	console.log(p1)
+	
+	//构造 ，类似函数
+	function Person(name, age, gender='男'){
+		//===对象属性====
+		this.name = name
+		this.age = age
+		this.gender = gender
+		//===对象函数===
+		this.eat = function(food){
+			console.log(this.name+'在吃'+food)
+		}
+		return this
+	}
+	p3 = new Person('小红', 20)
+	p4 = new Person('Tom', 30 , '女')
+	
+	//给内置库添加方法
+	//字符串首字母大写
+	String.prototype.ytToUpper = function(){
+		//'a' <= char <= 'z'(python)  -> char >= 'a' && char <= 'z'
+		tChar = this[0]
+		if(tChar>='a' && tChar <= 'z'){
+			return tChar.toUpperCase()+this.slice(1)
+		}
+		return this
+	}
+	//调用
+	str1 = 'abc'
+	console.log(str1.ytToUpper())
+</script>

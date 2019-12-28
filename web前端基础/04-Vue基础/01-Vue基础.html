@@ -1,0 +1,73 @@
+<!--
+	1.什么Vue  -  用js封装的框架,主要让数据渲染更加简单
+	Vue主要是通过一个Vue对象和网页内容进行关联，关联后修改Vue对象就可以直接修改网页内容
+	在工程要用Vue，需要先导入vue.js文件
+	
+	2.Vue对象  - js
+	el属性  -   字符串，传选择器(一般写id选择器), 将当前创建的Vue对象和html中的标签进行关联
+	data属性  -  对象, 对象的属性和对应的值程序员自己确定，没有要求; 通过对象的属性提供数据
+	methods属性 -  对象, 对象的属性名随便命名，属性值必须函数; 通过对象属性提供方法
+	computed属性 -  对象,对象的属性名随便命名, 属性值必须函数, 函数的返回值就是使用属性的值
+	
+	3.Vue指令  - html
+	1)标签内容  -  {{Vue属性名}}
+	2)标签属性  -  v-bind:标签属性 = 'Vue属性名'
+	3)if语句    -  v-if='Vue属性名' (如果Vue属性值是true对应的标签就显示，否则就隐藏)
+	4)循环结构  -  v-for = '变量 in 类型是数组的Vue属性'
+	5)双向绑定  -  v-model='Vue属性名' (一般在表单标签中有效)
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="title" >
+			<div class="goodsBox" v-for="data in goodsdata">
+				<div id="goodsImg">
+					<img v-bind:src="data.goods_image"/>
+				</div>
+				<div id="goodsInfo">
+					<p>{{data.name}}</p>
+					<p><font>{{data.tag}}</font></p>
+					<p><font>{{data.price}}</font></p>
+					<div id="goodsComment">
+						<font>{{data.comment_total}}</font>
+						<font>{{data.good_conmment}}</font>
+					</div>
+					<div id="goodsShop">
+						<font>{{data.shop_name}}</font>
+						<a v-bind:href="data.shop_url"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//1.链接数据
+			$.ajax({
+				type:"get",
+				url:"http://rap2api.taobao.org/app/mock/233723/shopping",
+				data:{username:"小明", password:"123456"},
+				success:function(result){
+					console.log(result)
+					render(result.data)
+				}
+			});
+			
+			//1.创建Vue对象
+			function render(goodsData){
+				var app1 = new Vue({
+					el:"#title",
+					data:{
+						goodsdata:goodsData
+					}
+					
+				})
+			}
+				
+		</script>
+	</body>
+</html>

@@ -1,0 +1,110 @@
+<!--
+	1.创建节点
+	document.createElement('标签名')   -  创建指定标签对应的节点
+	节点.innerText = '内容' - 文本
+	节点.innerHTML = '内容' - HTML
+	
+	2.添加节点
+	1)节点1.appendChild(节点2) - 在节点1 中的 最后添加节点2
+	2)节点1.insertBefore（节点2，节点3） - 在节点1中，节点3的前面添加节点2
+	
+	3.拷贝节点
+	节点.cloneNode() = 拷贝指定节点产生一个一样的新的节点(浅拷贝)
+	节点.cloneNode(true) = 拷贝指定节点产生一个一样的新的节点(深拷贝)
+	
+	4.删除节点
+	1)删除父节点中的子节点 - 父节点.removeChild(子节点)
+	2)删除节点 - 节点.remove()
+	
+	5.替换节点
+	节点1.replaceChild(节点2,节点3)  - 将节点1中的节点3替换成节点2
+	
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="subject">
+			<li>python</li>
+			<li>h5</li>
+		</ul>
+		<!--1.创建节点-->
+		<script type="text/javascript">
+			//1.创建节点 - 节点不会显示（要添加才会显示）
+			//document.createElement(标签名) - 创建指定标签对应的节点
+			linode = document.createElement('li')
+			
+			//设置
+			linode.innerText = 'Java'
+			//console.log(linode)
+			
+			//2.添加节点
+			//1)节点1.appendChild(节点2) - 在节点1的最后添加节点2
+			subjectNode = document.getElementById()
+			subjectNode.appendChild()
+			
+			//2）节点1.insertBefore（节点2，节点3） - 在节点1中，节点3的前面添加节点2
+			subjectNode.insertBefore()
+			linode2 = document.createElement('li')
+			linode2.innerText = '物联网'
+			
+		</script>
+		
+		<div id="box" style="background-color: hotpink; width: 300px; height: 100px;">
+			<p>我是段落1</p>
+		</div>
+		
+		<!--3.拷贝节点-->
+		<script type="text/javascript">
+			//3.拷贝节点
+			//节点.cloneNode() = 拷贝指定节点产生一个一样的新的节点(浅拷贝)
+			//节点.cloneNode(true)
+			console.log('===拷贝节点===')
+			_box = document.getElementById('box')
+			box2 = _box.cloneNode()
+			console.log(box2)
+			
+			_body = document.getElementsByTagName('body')[0]
+			_body.appendChild(_body)
+		</script>
+		
+		<div id="box2">
+			<p>我是段落1</p>
+			<a href="">我是超链接1</a>
+	
+		</div>
+		
+		<!--4.删除节点-->
+		<script type="text/javascript">
+			//1)删除父节点中的子节点 - 节点1.removeChild(节点2)
+			_box2 = document.getElementById('box2')
+			_box2.removeChild(document.getElementById())
+			
+			//2)删除节点 - 节点.remove()
+			
+		</script>
+		
+		<font>替换节点</font>
+		<br />
+		<div id="box3">
+			<p>我是段落1</p>
+			<a href="">我是超链接1</a>
+			<input type="" name="" id="" value="我是输入框" />
+		</div>
+		
+		<!--5.替换节点-->
+		<script type="text/javascript">
+			//1）
+			_box3 = document.getElementById('box3')
+			console.log(_box3.children[0])
+			console.log(_box3.children[0].cloneNode(true))
+			_box3.replaceChild(_box3.children[0].cloneNode(true), _box3.children[2])
+			
+		</script>
+		
+	</body>
+</html>

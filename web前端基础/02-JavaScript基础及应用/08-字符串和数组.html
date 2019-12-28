@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字符串和数组</title>
+	</head>
+	<body>
+	</body>
+</html>
+
+<script type="text/javascript">
+	//1.字符串
+	/*
+	1）获取字符
+	字符串[下标]
+	
+	2）字符串加法运算(无脑加，基本不报错)
+	特殊：字符串+非字符串  ==>  先转换字符串，再拼接
+	
+	3)字符串长度
+	字符串.length
+	
+	4)字符串相关方法
+	字符串.slice(起始长度，结束长度) - 切片
+	字符串.replace(字符(原),替换字符(新))		-	替换指定字符		-	特殊：字符(原)可以使用正则 -> /正则表达式/g  (加g为全局替换)
+	字符串.split(字符)		-	切割字符串
+	正则对象.test(字符串)	-	判断字符串和正则表达式是否匹配，结果是布尔
+	 */
+	
+	
+	//2.数组
+	/*
+	1）查
+	数组[下标]
+	遍历：for-in for-of
+	
+	2）增
+	数组[下标] = 值	-	下标不存在会增加元素
+	数组.push(元素)	-	python-append
+	数组.unshift(元素)	-	数组的最前面添加元素
+	数组.splice(下标,0,元素1,元素2...)	-	在指定下标前插入，可以连续增加
+	
+	
+	3）删
+	数组.splice(下标，n)	-	指定下标开始删n个数 (有增加的作用)
+	数组.pop()	-	python-pop()
+	数组.shift()		-	取出数组中第一个元素
+	*/
+	
+	//其他方法
+	/*
+	1）排序
+	数组.sort(fn)
+	按元素大小从小到大排序
+	function fn(item1,item2){
+		return item1 - item2
+	}
+	按元素个位数从小到大排序
+	function fn(item1,item2){
+		return item1%10 - item2%10
+	}
+	按各位数的和进行排序
+	function fn(item1,item2){
+		r1 = 
+		return
+	}
+	*/
+	
+	//2.数组.join('')	-	用字符串将数组中元素拼接在一个产生一个新的字符串
+	
+	//3.数组.forEach(函数)
+	
+	
+	console.log('===实例===')
+	//1.下标查字符串
+	a = [1,2,3,4,50]
+	console.log(a[3])
+	
+	//2.字符串加非字符串
+	b = 'abc'
+	c = {
+		name:'xx'
+	}
+	console.log(c.name+b)
+	
+	//3.字符串长度
+	console.log(c.name.length)
+	
+	//4.建立字符串对象，当字符串用(待补充：和普通字符串不同的用法)
+	str4 = new String('abc')
+	console.log(str4+100)
+	console.log(str4)
+	
+	//5.字符串常用方法
+	//切片
+	a = 'abcas345dfsadf'
+	console.log(a.slice(1,2))
+	
+	//替换
+	console.log(a.replace(/[sdfwqer]/g,'A'))
+	
+	//切割
+	console.log(a.split('a'))
+	
+	//正则检测
+	re = /abc/
+	console.log(re.test(a))
+	
+	//6.数组
+	//下标操作
+	a = [1,2,'asd23',c]
+	console.log(a)
+	console.log(a[3])
+	//for-in 遍历
+	for (index in a){
+		console.log(index)
+//		window.alert(index)
+	}
+	//for-of遍历
+	for (item of a){
+		console.log(item)
+	}
+	//下标增
+	a[10] = 'a'
+	console.log(a)
+	//数组.push()		-	添加到数组尾巴
+	a.push('aaa')
+	console.log(a)
+	//数组.unshift()		-	添加到数组头头
+	a.unshift('zzzz')
+	console.log(a)
+	
+	//数组.splice(下标,n,元素1,...)	-
+	/*
+	有意思的函数，同时执行添加删除操作
+	第一个参数写执行下标，
+	第二个参数删除元素个数
+	第三个参数将要添加元素,个数由','决定
+	先删后增，
+	删除原位置的n个元素
+	再添加
+	*/
+	a.splice(1,1,['xxx',111])
+	console.log(a)
+	
+	//删pop,shift ---- 取尾巴一个，取头头一个
+	
+	
+	//相关方法1 - 排序
+	// 数组.sort(fn)
+	r1 = [123,1,42,54]
+	r1.sort(function(x, y){
+		return x - y
+	})
+	console.log(r1)
+	
+	//相关方法2 - join
+	//数组.join("")
+	r = r1.join("")
+	console.log(r)
+	
+	//相关方法3 - js中的枚举法
+	r1.forEach(function(item,index){
+		console.log(index,item)
+	})
+	
+	
+	//关于js中数字与字符串之间的转换Number - String - 类型判定 typeof()
+	a = '123'
+	b = Number(a)
+	console.log(b, typeof(b))
+	console.log(String(b),typeof(a))
+	
+</script>

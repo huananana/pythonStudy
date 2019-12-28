@@ -1,0 +1,56 @@
+<!--
+	1.双标签的内容
+	1)字节.innerText属性
+	     字节.innerHTML属性
+	2)修改标签内容
+	字节.innerText属性 = '内容'
+	字节.innerHTML属性 = '内容'
+	
+	2.普通属性修改
+	字节.(对应字节标签的)属性
+	设置class属性 - 字节.className = 'c1'
+	
+	设置标签的整体样式/单独设置样式的指定属性
+	字节.style = '' - 字节.style.width = '200px'
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>节点内容和属性</title>
+	</head>
+	<body>
+		<p id="p1">1 <img src="" alt="" /></p>
+		<script type="text/javascript">
+			//1.双标签的内容 - 
+			//1)innerText属性 - 获取双标签的文字内容
+			//  innerHTML属性 - 
+			_p1 = document.getElementById('p1')
+//			获取标签内容
+			console.log(_p1.innerText)
+			console.log(_p1.innerHTML)
+			//修改标签内容1
+			_p1.innerText = 2 + '<a href=""></a>'
+			console.log(_p1.innerText)
+			console.log(_p1.innerHTML)
+			//修改标签内容2
+			_p1.innerHTML = 2 + '<a href=""></a>'
+			console.log(_p1.innerText)
+			console.log(_p1.innerHTML)
+			
+			//2.普通属性
+			//HTML标签中所有的属性，在js节点中都会对应一样的属性
+			_img1 = document.getElementById('img')
+			_img1.src = 'img/bucket.png'
+			
+			//设置class属性
+			_img1.className = 'c1'
+			
+			//设置标签的整体样式/单独设置样式的指定属性
+			_p1.style = ''
+			_p1.style.width = '200px'
+			
+		</script>
+		
+	</body>
+</html>
