@@ -1,7 +1,7 @@
 ﻿# 使用shell脚本编写自动更新仓库脚本
 
 # 移动到您的本地仓库地址
-cd /d/studyNote
+cd /d/pythonStudy
 echo 请输入提示信息：
 read submit_information
 
