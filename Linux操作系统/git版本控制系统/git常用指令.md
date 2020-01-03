@@ -10,11 +10,11 @@
 
 `git reset  -- hard   HEAD`  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——   让工作目录中的内容和仓库中的内容保持一致  
 `git reset  --hard HEAD^`   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  回到上一个版本  
-`git  reset  -- hard 版本号`  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  回到指定的版本  
+`git  reset  -- hard 版本号`       ——  回到指定的版本  
 
+`git tag v0.1` —— 版本标签
 
-
-`git checkout  文件名`  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  从暂存区中恢复工作目录中的内容(让工作区中的指定文件，回到上次提交的时候的状态)  
+`git checkout  文件名`        ——  从暂存区中恢复工作目录中的内容(让工作区中的指定文件，回到上次提交的时候的状态)  
 
 
 

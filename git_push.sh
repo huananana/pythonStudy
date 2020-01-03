@@ -12,7 +12,7 @@ echo ==============华丽分割线==============
 git add -A
 echo ==============华丽分割线==============
 
-read a
+# read a
 # 提交本地仓库
 git commit -m $submit_information
 echo ==============华丽分割线==============
