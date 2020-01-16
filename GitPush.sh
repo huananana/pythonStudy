@@ -18,6 +18,7 @@ read
 git commit -m $submit_information
 echo 完成提交本地仓库
 echo 上传到远程仓库master分之
+read
 
 # 上传远程仓库
 git push
